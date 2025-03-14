@@ -18,6 +18,47 @@ public class Bai1 {
     - Giải thích getter và setter:
             + Getter: Lấy thông tin.
             + Setter: Thay đổi thông tin.
+            Ví dụ:
+        public class Person {
+            private String name;
+            private int age;
+            public Person(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public int getAge() {
+                return age;
+            }
+
+            public void setAge(int age) {
+                if (age > 0) {
+                    this.age = age;
+                } else {
+                    System.out.println("Tuổi không hợp lệ!");
+                }
+            }
+
+            public static void main(String[] args) {
+                Person person = new Person("Nguyen van a", 19);
+                System.out.println("Tên: " + person.getName() + ", Tuổi: " + person.getAge());
+
+                person.setName("Nguyen van a");
+                person.setAge(20);
+                System.out.println("Tên: " + person.getName() + ", Tuổi: " + person.getAge());
+
+                person.setAge(-5);
+            }
+        }
+
     - Lợi ích :
         Dễ dàng bảo trì và mở rộng: Code được tổ chức thành các module dễ quản lý.
         Tăng khả năng tái sử dụng: Các class và đối tượng có thể được sử dụng lại trong các phần khác nhau của chương trình.
